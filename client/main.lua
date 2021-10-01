@@ -379,7 +379,7 @@ Citizen.CreateThread(function() -- Stress
         if not IsGaining then
             StressGain = math.ceil(StressGain)
             if StressGain > 0 then
-                QBCore.Functions.Notify('You are feeling stressed', "primary", 2000)
+                TriggerEvent('QBCore:Notify', "You are feeling stressed", "error")
                 TriggerServerEvent('hud:Server:UpdateStress', StressGain)
                 StressGain = 0
             end
@@ -430,10 +430,10 @@ Citizen.CreateThread(function()
 
             -- Low Fuel Alert
 
-            if IsPedInAnyVehicle(PlayerPedId(), true) then
+            if IsPedInAnyVehicle(PlayerPedId(), false) then
                 while exports['LegacyFuel']:GetFuel(GetVehiclePedIsIn(PlayerPedId())) <= 20 do -- At 20% Fuel Left
                     TriggerServerEvent("InteractSound_SV:PlayOnSource", "pager", 0.10)
-                    QBCore.Functions.Notify('Low Fuel!', "error")
+                    TriggerEvent('QBCore:Notify', "Low Fuel!", "error")
                     Wait(60000) -- Displays Every 1 Minute
                 end
                 speed = GetEntitySpeed(GetVehiclePedIsIn(PlayerPedId(), false)) * 2.236936
