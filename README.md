@@ -27,6 +27,35 @@ Runs at ~ 6 to 8 ms I can't be bothered to optimize more I will later on
 ![20210930033055_1](https://user-images.githubusercontent.com/91661118/135427015-e21adb75-4525-4c65-8d95-b6ad9fe2c6e4.jpg)
 ![20210930033344_1](https://user-images.githubusercontent.com/91661118/135427463-39d9c332-46e8-476a-ac49-c579c9318143.jpg)
 
+# Find qb-smallresources / client / seatbelt.lua and replace with this
+```
+-- Functions
+
+function ToggleSeatbelt()
+    if seatbeltOn then
+        seatbeltOn = false
+        TriggerEvent("seatbelt:client:ToggleSeatbelt")
+        TriggerServerEvent("InteractSound_SV:PlayOnSource", "carunbuckle", 0.25)
+        TriggerEvent('QBCore:Notify', "Seat belt unbuckled!", "error")
+    else
+        seatbeltOn = true
+        TriggerEvent("seatbelt:client:ToggleSeatbelt")
+        TriggerServerEvent("InteractSound_SV:PlayOnSource", "carbuckle", 0.25)
+        TriggerEvent('QBCore:Notify', "Seat belt buckled!")
+    end
+end
+
+function ToggleHarness()
+    if harnessOn then
+        harnessOn = false
+        ToggleSeatbelt()
+    else
+        harnessOn = true
+        ToggleSeatbelt()
+    end
+end
+```
+
 # Installation
 
 * Download lj-hud put it anywhere in the [resources] directory.
