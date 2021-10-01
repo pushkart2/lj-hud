@@ -1,4 +1,4 @@
-QBCore = nil
+local QBCore = exports['qb-core']:GetCoreObject()
 local toggleHud = true
 local cashAmount = 0
 local bankAmount = 0
@@ -430,7 +430,7 @@ Citizen.CreateThread(function()
 
             -- Low Fuel Alert
 
-            if IsPedInAnyVehicle(PlayerPedId(), false) then
+            if IsPedInAnyVehicle(PlayerPedId(), true) then
                 while exports['LegacyFuel']:GetFuel(GetVehiclePedIsIn(PlayerPedId())) <= 20 do -- At 20% Fuel Left
                     TriggerServerEvent("InteractSound_SV:PlayOnSource", "pager", 0.10)
                     QBCore.Functions.Notify('Low Fuel!', "error")
