@@ -2,7 +2,7 @@ fx_version 'cerulean'
 games { 'gta5' }
 
 description 'lj-hud'
-version '1.0.0'
+version '1.1.0'
 
 client_scripts {
 	"config.lua",
@@ -10,13 +10,16 @@ client_scripts {
 }
 
 server_scripts {
-	"@qb-core/import.lua",
 	"config.lua",
 	"server/*.lua",
 }
 
 ui_page {
 	'html/ui.html',	
+}
+
+shared_scripts {
+	'@qb-core/import.lua',
 }
 
 files {
