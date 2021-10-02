@@ -10,6 +10,7 @@ client_scripts {
 }
 
 server_scripts {
+	"@qb-core/import.lua",
 	"config.lua",
 	"server/*.lua",
 }
