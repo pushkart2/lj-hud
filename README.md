@@ -3,7 +3,7 @@
 My qb-hud edit. Before you drone on about Pepe-HUD similarites, yes, there is parts of it in here. However, I've already gotten permission from the original developer.
 I don't fucking care for drama. Shut up and use it or don't idc.
 
-Runs at ~ 6 to 8 ms I can't be bothered to optimize more I will later on
+Runs at ~ 0.06 to 0.08 ms if you have more optimization suggestions feel free to reach out
 
 # Credits
 * Credit for compass/street names goes to [compass](https://github.com/thelindat/compass)
