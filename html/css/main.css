@@ -108,7 +108,7 @@ p {
   font-style: normal;
   font-variant: small-caps;
   text-transform: none;
-  top: 6vh;
+  top: 1vh;
   position: relative;
   font-size: 14pt;
   color:rgba(255,255,255, 1);
@@ -484,4 +484,3 @@ p {
     top: 18px;
     display: inline-block;
 }
-
