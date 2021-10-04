@@ -589,6 +589,9 @@ end)
                 SendNUIMessage({
                     action = "displayCircleUI"
                 })
+                SendNUIMessage({
+                    action = "hide", type = street
+                })
                 uiHidden = false
             end
                 Citizen.Wait(0)
@@ -641,6 +644,9 @@ Citizen.CreateThread(function()
             pauseActive = true 
             SendNUIMessage({
                 action = "hideSquareUI"
+            })
+            SendNUIMessage({
+                action = "hide", type = street
             })
             uiHidden = true
         elseif not isPMA and pauseActive then
