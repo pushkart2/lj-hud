@@ -102,9 +102,9 @@ var CurrentProx = 0;
         $('.hvida').fadeOut(3000);
     }
     if (data.health <= 145) {
-        $('.vida').css("stroke", "red");
+        $('.vida').css("fill", "red");
     } else {
-        $('.vida').css("stroke", "#498949");
+        $('.vida').css("fill", "#498949");
     }
 
     // Armor Circle
@@ -117,9 +117,9 @@ var CurrentProx = 0;
         $('.harmor').fadeOut(3000);
     }
     if (data.armor <= 45) {
-        $('.amr').css("stroke", "red");
+        $('.amr').css("fill", "red");
     } else {
-        $('.amr').css("stroke", "#2962FF");
+        $('.amr').css("fill", "#2962FF");
     }
 
     // Hunger Circle
@@ -132,9 +132,9 @@ var CurrentProx = 0;
         $('.hhunger').fadeOut(3000);
     }
     if (data.hunger <= 45) {
-        $('.fome').css("stroke", "red");
+        $('.fome').css("fill", "red");
     } else {
-        $('.fome').css("stroke", "#f0932b");
+        $('.fome').css("fill", "#f0932b");
     }
 
     // Thirst Circle
@@ -147,9 +147,9 @@ var CurrentProx = 0;
         $('.hthirst').fadeOut(3000);
     }
     if (data.thirst <= 45) {
-        $('.cede').css("stroke", "red");
+        $('.cede').css("fill", "red");
     } else {
-        $('.cede').css("stroke", "#3467d4");
+        $('.cede').css("fill", "#3467d4");
     }
 
     // Stress Circle
@@ -190,9 +190,9 @@ var CurrentProx = 0;
 
     Progress(data.nivel, ".nitrous");
     if (data.activo) {
-    $(".nitrous").css({"stroke":"#fcb80a"});
+    $(".nitrous").css({"stroke":"#ff5454"});
     } else {
-    $(".nitrous").css({"stroke":"rgb(241, 71, 185)"});
+    $(".nitrous").css({"stroke":"#F06292"});
     }  
 
     // Engine Health
