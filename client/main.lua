@@ -235,7 +235,7 @@ Citizen.CreateThread(function()
             local speaking = NetworkIsPlayerTalking(PlayerId())
             local street1, street2 = GetStreetNameAtCoord(pos.x, pos.y, pos.z, Citizen.ResultAsInteger(), Citizen.ResultAsInteger())
             local current_zone = GetLabelText(GetNameOfZone(pos.x, pos.y, pos.z))
-            local fuel = exports['LegacyFuel']:GetFuel(GetVehiclePedIsIn(PlayerPedId()))
+            local fuel = exports['LegacyFuel']:GetFuel(GetVehiclePedIsIn(PlayerPedId(), false))
             local engine = (GetVehicleEngineHealth(GetVehiclePedIsIn(PlayerPedId()))/10)
             local level = LocalPlayer.state["proximity"].distance
             if level == 1 then talking = 33
@@ -431,7 +431,7 @@ Citizen.CreateThread(function()
             -- Low Fuel Alert
 
             if IsPedInAnyVehicle(PlayerPedId(), false) then
-                while exports['LegacyFuel']:GetFuel(GetVehiclePedIsIn(PlayerPedId())) <= 20 do -- At 20% Fuel Left
+                if exports['LegacyFuel']:GetFuel(GetVehiclePedIsIn(PlayerPedId(), false)) <= 100 then -- At 20% Fuel Left
                     TriggerServerEvent("InteractSound_SV:PlayOnSource", "pager", 0.10)
                     TriggerEvent('QBCore:Notify', "Low Fuel!", "error")
                     Wait(60000) -- Displays Every 1 Minute
