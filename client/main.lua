@@ -431,7 +431,7 @@ Citizen.CreateThread(function()
             -- Low Fuel Alert
 
             if IsPedInAnyVehicle(PlayerPedId(), false) then
-                if exports['LegacyFuel']:GetFuel(GetVehiclePedIsIn(PlayerPedId(), false)) <= 100 then -- At 20% Fuel Left
+                if exports['LegacyFuel']:GetFuel(GetVehiclePedIsIn(PlayerPedId(), false)) <= 20 then -- At 20% Fuel Left
                     TriggerServerEvent("InteractSound_SV:PlayOnSource", "pager", 0.10)
                     TriggerEvent('QBCore:Notify', "Low Fuel!", "error")
                     Wait(60000) -- Displays Every 1 Minute
