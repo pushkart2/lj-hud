@@ -12,6 +12,8 @@ Runs at ~ 0.06 to 0.08 ms if you have more optimization suggestions feel free to
 
 # Dependencies
 * [qbcore framework](https://github.com/qbcore-framework)
+* [pma-voice](https://github.com/AvarianKnight/pma-voice)
+* [qb-radio](https://github.com/qbcore-framework/qb-radio)
 
 # Key Features
 * Voice proximity and radio proximity highlighted
