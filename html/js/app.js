@@ -69,37 +69,34 @@ var CurrentProx = 0;
 
     Progress(data.talking, ".mic");
     if (data.speaking == 1) {
-    $(".mic").css({"stroke":"yellow"}); 
+    $(".mic").css({"stroke":"yellow"}); // Voice Hightlight Color
     } else {
     $('.mic').css({"stroke":"#fff"});
     }
-
-    Config.SetTalkingState = function(data) {
-        if (!data.IsTalking) {
-            $(".voice-block").animate({"background-color": "rgb(255, 255, 255)"}, 150);
-        } else {
-            $(".voice-block").animate({"background-color": "#fc4e03"}, 150);
-        }
+    if (data.talking) {
+    $(".microphone").css({"display":"block"}); // Don't touch this
+    $(".headset").css({"display":"none"}); // Don't touch this
     }
 
     // Radio & Highlight Circle
 
-    if (data.talking && data.radio) {
-        $(".mic").css({"background-color": "#3467d4"});
-    } else if (data.talking) {
-        $(".mic").css({"background-color": "white"}); 
-    } else {
-        $(".mic").css({"background-color": "rgb(85, 85, 85)"}); 
+    Progress(data.talking, ".mic"); 
+    if (data.radio && data.speaking == 1) {
+    $(".mic").css({"stroke":"#ff5454"}); // Radio Hightlight Color
+    }
+    if (data.radio) {
+    $(".microphone").css({"display":"none"}); // Don't touch this
+    $(".headset").css({"display":"block"}); // Don't touch this
     }
 
     // Health Circle
 
     Progress(data.health - 100, ".hp");
     if (data.health <= 195) {
-        $('.hvida').fadeIn(3000);
+        $('.hvida').fadeIn(750);
     }
     if (data.health >= 196) {
-        $('.hvida').fadeOut(3000);
+        $('.hvida').fadeOut(750);
     }
     if (data.health <= 145) {
         $('.vida').css("fill", "red");
@@ -111,10 +108,10 @@ var CurrentProx = 0;
 
     Progress(data.armor, ".armor");
     if (data.armor <= 95) {
-        $('.harmor').fadeIn(3000);
+        $('.harmor').fadeIn(750);
     }
     if (data.armor >= 96) {
-        $('.harmor').fadeOut(3000);
+        $('.harmor').fadeOut(750);
     }
     if (data.armor <= 45) {
         $('.amr').css("fill", "red");
@@ -126,10 +123,10 @@ var CurrentProx = 0;
 
     Progress(data.hunger, ".hunger");
     if (data.hunger <= 95) {
-        $('.hhunger').fadeIn(3000);
+        $('.hhunger').fadeIn(750);
     }
     if (data.hunger >= 96) {
-        $('.hhunger').fadeOut(3000);
+        $('.hhunger').fadeOut(750);
     }
     if (data.hunger <= 45) {
         $('.fome').css("fill", "red");
@@ -141,10 +138,10 @@ var CurrentProx = 0;
 
     Progress(data.thirst, ".thirst");
     if (data.thirst <= 95) {
-        $('.hthirst').fadeIn(3000);
+        $('.hthirst').fadeIn(750);
     }
     if (data.thirst >= 96) {
-        $('.hthirst').fadeOut(3000);
+        $('.hthirst').fadeOut(750);
     }
     if (data.thirst <= 45) {
         $('.cede').css("fill", "red");
@@ -156,10 +153,18 @@ var CurrentProx = 0;
 
     Progress(data.stress, ".stress");
     if (data.stress >= 3) {
-        $('.hstress').fadeIn(3000);
+        $('.hstress').fadeIn(750);
     }
     if (data.stress <= 2) {
-        $('.hstress').fadeOut(3000);
+        $('.hstress').fadeOut(750);
+    }
+
+    // Dev Circle
+
+    if (data.devmode) {
+        $(".circle-dev").fadeIn(750);
+    } else {
+        $(".circle-dev").fadeOut(750);
     }
 
 // CAR HUD
@@ -167,10 +172,10 @@ var CurrentProx = 0;
     Config.CarHud = function(data) {
         if (data.show) {
             $(".ui-car-container").fadeIn();
-            $(".hnitrous").fadeIn(3000);
+            //$(".hnitrous").fadeIn(3000);
         } else {
             $(".ui-car-container").fadeOut();
-            $('.hnitrous').fadeOut(3000);
+            //$('.hnitrous').fadeOut();
         }
     };
 
@@ -194,6 +199,12 @@ var CurrentProx = 0;
     } else {
     $(".nitrous").css({"stroke":"#F06292"});
     }  
+
+    if (data.nivel > 0) {
+    $(".hnitrous").fadeIn(750);
+    } else {       
+    $('.hnitrous').fadeOut(750);
+    }
 
     // Engine Health
 
