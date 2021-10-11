@@ -446,6 +446,14 @@ p {
     width: 2.3vh;
   }
 
+  .circle-dev {
+    display: none;
+  }
+
+  .circle-dev {
+    display: none;
+  }
+
   .car-seatbelt-info img {
     display: flex;
     position: absolute;
