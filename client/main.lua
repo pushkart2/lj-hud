@@ -1,4 +1,5 @@
 local QBCore = exports['qb-core']:GetCoreObject()
+local dev = false
 local toggleHud = true
 local cashAmount = 0
 local bankAmount = 0
@@ -19,6 +20,11 @@ stress = 0
 PlayerJob = {}
 
 -- Events
+
+RegisterNetEvent("qb-admin:client:ToggleDevmode")
+AddEventHandler("qb-admin:client:ToggleDevmode", function()
+    devmode = not devmode
+end)
 
 RegisterNetEvent("QBCore:Client:OnPlayerUnload")
 AddEventHandler("QBCore:Client:OnPlayerUnload", function()
@@ -250,6 +256,7 @@ Citizen.CreateThread(function()
                 show = IsPauseMenuActive(),
                 health = GetEntityHealth(PlayerPedId()),
                 armor = GetPedArmour(PlayerPedId()),
+                devmode = devmode,
                 thirst = thirst,
                 hunger = hunger,
                 engine = engine,
@@ -257,7 +264,7 @@ Citizen.CreateThread(function()
                 seatbelt = seatbeltOn,
                 speaking = speaking,
                 talking = talking,
-
+                radio = LocalPlayer.state['radioChannel'],
                 street1 = GetStreetNameFromHashKey(street1),
                 street2 = GetStreetNameFromHashKey(street2),
                 area_zone = current_zone,
@@ -401,6 +408,7 @@ Citizen.CreateThread(function()
             })
             radarActive = true
         else
+            nivel = 0
             DisplayRadar(false)
             SendNUIMessage({
                 action = "car",
