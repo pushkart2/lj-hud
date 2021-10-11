@@ -16,6 +16,8 @@ Runs at ~ 0.06 to 0.08 ms if you have more optimization suggestions feel free to
 * [qb-radio](https://github.com/qbcore-framework/qb-radio)
 
 # Key Features
+* Dev mode radial when permission to do so
+* Headset icon appears when connected to radio channel
 * Voice proximity and radio proximity highlighted
 * Radial icons realign
 * Seat belt equipped icon indicator
@@ -32,6 +34,55 @@ Runs at ~ 0.06 to 0.08 ms if you have more optimization suggestions feel free to
 ![FiveM - Test Server built with QBCore Framework by JericoFx   Kakarot   Hamy! 2021-10-04 6_33_47 PM](https://user-images.githubusercontent.com/91661118/135943380-a020a2b7-05c1-4b7c-8faa-5a6c1014301d.png)
 ![FiveM - Test Server built with QBCore Framework by JericoFx   Kakarot   Hamy! 2021-10-04 6_35_12 PM](https://user-images.githubusercontent.com/91661118/135943390-b19d5847-d405-48f5-bedd-da9865990a91.png)
 ## https://streamable.com/ccuikq
+
+# Find qb-adminmenu / client.lua and find this part
+```
+local banlength = nil
+local showCoords = false
+local vehicleDevMode = false
+local banreason = 'Unknown'
+local kickreason = 'Unknown'
+
+local menu = MenuV:CreateMenu(false, 'Admin Menu', 'topright', 220, 20, 60, 'size-125', 'none', 'menuv', 'test')
+local menu2 = MenuV:CreateMenu(false, 'Admin Options', 'topright', 220, 20, 60, 'size-125', 'none', 'menuv', 'test1')
+local menu4 = MenuV:CreateMenu(false, 'Online Players', 'topright', 220, 20, 60, 'size-125', 'none', 'menuv', 'test3')
+local menu5 = MenuV:CreateMenu(false, 'Manage Server', 'topright', 220, 20, 60, 'size-125', 'none', 'menuv', 'test4')
+local menu6 = MenuV:CreateMenu(false, 'Available Weather Options', 'topright', 220, 20, 60, 'size-125', 'none', 'menuv', 'test5')
+local menu7 = MenuV:CreateMenu(false, 'Dealer List', 'topright', 220, 20, 60, 'size-125', 'none', 'menuv', 'test6')
+local menu8 = MenuV:CreateMenu(false, 'Ban', 'topright', 220, 20, 60, 'size-125', 'none', 'menuv', 'test7')
+local menu9 = MenuV:CreateMenu(false, 'Kick', 'topright', 220, 20, 60, 'size-125', 'none', 'menuv', 'test8')
+local menu10 = MenuV:CreateMenu(false, 'Permissions', 'topright', 220, 20, 60, 'size-125', 'none', 'menuv', 'test9')
+local menu11 = MenuV:CreateMenu(false, 'Developer Options', 'topright', 220, 20, 60, 'size-125', 'none', 'menuv', 'test10')
+local menu12 = MenuV:CreateMenu(false, 'Vehicle Options', 'topright', 220, 20, 60, 'size-125', 'none', 'menuv', 'test11')
+local menu13 = MenuV:CreateMenu(false, 'Vehicle Categories', 'topright', 220, 20, 60, 'size-125', 'none', 'menuv', 'test12')
+local menu14 = MenuV:CreateMenu(false, 'Vehicle Models', 'topright', 220, 20, 60, 'size-125', 'none', 'menuv', 'test13')
+```
+
+# Make a new space under then copy and paste this snippet 
+### (you can also do /dev in-game if you have rank "admin" or higher)
+
+```
+local devmode = false
+
+local menu_buttondev = menu11:AddCheckbox({
+    icon = '⚫',
+    label = 'Dev Mode',
+    value = menu2,
+    description = 'Enable/Disable Developer Mode'
+})
+
+menu_buttondev:On('change', function(item, newValue, oldValue)
+    devmode = not devmode
+    TriggerEvent('qb-admin:client:ToggleDevmode')
+    if devmode then
+        while devmode do
+            Citizen.Wait(200)
+            SetPlayerInvincible(PlayerId(), true)
+        end
+            SetPlayerInvincible(PlayerId(), false)
+    end
+end)
+```
 
 # Find qb-smallresources / client / seatbelt.lua and replace with this
 ```
@@ -71,15 +122,21 @@ ensure lj-hud
 ```
 
 # Change Logs
+
+### 1.1.1
+* Added radio highlight color
+* Added radio icon when connected to channel
+* Added dev mode used either from admin menu or in-game command
+* Fixed nitrous radial showing without being installed
+* More optimization
+
 ### 1.1.0
 * Initial release
 
-# Future Shit
-* Dev radial displayed if you have permissions required 
-* In-game menu 
-* Radio icon appears when connected to radio channel
-* Cooldown radial option
-* Battery radial option
+# Future Updates
+* In-game menu
+* Cooldown radial option for minigames
+* Battery radial option for radio
 * More optimization shit
 
 # Issues and Suggestions
