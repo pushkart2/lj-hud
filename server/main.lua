@@ -94,3 +94,11 @@ TriggerEvent('QBCore:GetObject', function(obj) QBCore = obj end)
 QBCore.Commands.Add("cash", "Check cash", {}, false, function(source, args)
 	TriggerClientEvent('hud:client:ShowMoney', source, "cash")
 end)
+
+QBCore.Commands.Add("dev", "Enable/Disable Developer Mode", {}, false, function(source, args)
+    if QBCore.Functions.HasPermission(source, 'admin') then
+	    TriggerClientEvent("qb-admin:client:ToggleDevmode", source)
+    else
+        TriggerClientEvent('QBCore:Notify', source, 'No Access To This Command ', 'error')
+    end
+end)
