@@ -16,7 +16,7 @@ Runs at ~ 0.06 to 0.08 ms if you have more optimization suggestions feel free to
 * [qb-radio](https://github.com/qbcore-framework/qb-radio)
 
 # Key Features
-* Dev mode radial when permission to do so
+* Dev mode radial when permission to do so (if you want dev mode working must follow instructions below)
 * Headset icon appears when connected to radio channel
 * Voice proximity and radio proximity highlighted
 * Radial icons realign
