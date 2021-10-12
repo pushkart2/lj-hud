@@ -147,7 +147,7 @@ ensure lj-hud
 ![dlk-atlas-map-tile2d](https://user-images.githubusercontent.com/91661118/136893398-b619e4a3-bb9a-4744-bea6-9561f3532c4c.png)
 # If you want retextured map skins
 * [dlk_maps_fivem](https://github.com/omgugly/dlk_maps_fivem)
-* Download the map you choose and put it anywhere in the [resources] directory then ensure the name of it.
+* Download the map you've chosen and put it anywhere in the [resources] directory then ensure the name of it.
 
 (nopixel uses altas) 
 
