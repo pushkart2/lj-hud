@@ -87,7 +87,7 @@ menu_buttondev:On('change', function(item, newValue, oldValue)
 end)
 ```
 
-# Find qb-smallresources / client / seatbelt.lua and replace with this
+# Find qb-smallresources / client / seatbelt.lua find this part and replace with this snippet
 ```
 -- Functions
 
