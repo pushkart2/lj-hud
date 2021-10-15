@@ -107,16 +107,15 @@ var CurrentProx = 0;
     // Armor Circle
 
     Progress(data.armor, ".armor");
-    if (data.armor <= 95) {
-        $('.harmor').fadeIn(750);
-    }
-    if (data.armor >= 96) {
-        $('.harmor').fadeOut(750);
-    }
     if (data.armor <= 45) {
         $('.amr').css("fill", "red");
     } else {
         $('.amr').css("fill", "#2962FF");
+    }
+    if (data.armor > 0) {
+        $(".harmor").fadeIn(750);
+    } else {
+        $('.harmor').fadeOut(750);
     }
 
     // Hunger Circle
