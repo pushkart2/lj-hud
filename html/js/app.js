@@ -107,11 +107,12 @@ var CurrentProx = 0;
     // Armor Circle
 
     Progress(data.armor, ".armor");
-    if (data.armor <= 45) {
-        $('.amr').css("fill", "red");
-    } else {
+    if (data.armor > 100) {
         $('.amr').css("fill", "#2962FF");
     }
+    if (data.armor <= 45) {
+        $('.amr').css("fill", "red");
+    } 
     if (data.armor > 0) {
         $(".harmor").fadeIn(750);
     } else {
