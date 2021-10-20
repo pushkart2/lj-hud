@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- css import -->
+  <link href="https://fonts.cdnfonts.com/css/pricedown" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  
+  <!-- js import -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.0-rc.2/jquery-ui.min.js"></script>
+  <script src="js/app.js" type="text/javascript"></script>
+  <script src="js/config.js" type="text/javascript"></script>
+</head>
+
+<!-- cash -->
+<body style="background-color: transparent;">
+  <div class="money-container">
+    <div class="money-content">
+      <div class="money-cash">
+        <p class="munnie">&dollar;&nbsp;
+          <span id="cash"></span>
+        </p>
+      </div>
+      <div class="money-bank">
+        <p class="munnie">&dollar;&nbsp;
+          <span id="bank"></span>
+        </p>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="ui-container">
+    <div class="ui-bars-container">
+
+      <!-- voice radial -->
+      <svg class="circle" width="53" height="53">
+        <circle class="fundo" stroke="#fff" stroke-width="0" style="fill-opacity: 0.4" fill="white" r="22" cx="26" cy="26" stroke-dasharray="0 0" stroke-dashoffset="0" />
+        <circle class="new" stroke="#fff" stroke-width="0" style="stroke-opacity: 0.6" fill="#202020" r="16" cx="26" cy="27" stroke-dasharray="0 0" stroke-dashoffset="0" />
+        <circle class="progressmic mic" stroke="#FFEB3B" stroke-width="6.0" style="stroke-opacity: 1.0" fill="transparent" r="19" cx="26" cy="26" stroke-dasharray="70 30" stroke-dashoffset="0" />
+        
+        <!-- microphone icon -->
+        <image href="img/voice.svg" class="microphone" height="19" width="19" x="16.7" y="16.8">
+        </image>
+        <!-- headset icon -->
+        <image href="img/headset.svg" class="headset" height="18" width="18" x="16.7" y="17">
+        </image>
+      </svg>
+      
+      <!-- health radial -->
+      <svg class="circle hvida" width="53" height="53">
+        <circle class="fundo vida" stroke="#fff" stroke-width="0" style="fill-opacity: 0.4" fill="white" r="22" cx="26" cy="26" stroke-dasharray="0 0" stroke-dashoffset="0" />
+        <circle class="new" stroke="#fff" stroke-width="0" style="stroke-opacity: 0.6" fill="#202020" r="16" cx="26" cy="27" stroke-dasharray="0 0" stroke-dashoffset="0" />
+        <circle class="progressplayer hp" stroke="#00E676" stroke-width="6.0" style="stroke-opacity: 1.0" fill="transparent" r="19" cx="26" cy="26" stroke-dasharray="70 30" stroke-dashoffset="0" />
+        
+        <!-- health icon -->
+        <image href="img/heart.svg" class="heathicon" height="19" width="19" x="16.5" y="18">
+        </image>
+      </svg>
+
+      <!-- armor radial -->
+      <svg class="circle harmor" width="53" height="53">
+        <circle class="fundo amr" stroke="#fff" stroke-width="0" style="fill-opacity: 1" fill="white" r="22" cx="26" cy="26" stroke-dasharray="0 0" stroke-dashoffset="0" />
+        <circle class="new" stroke="#fff" stroke-width="0" style="stroke-opacity: 0.6" fill="#202020" r="16" cx="26" cy="27" stroke-dasharray="0 0" stroke-dashoffset="0" />
+        <circle class="progressplayer armor" stroke="#2962FF" stroke-width="6.0" style="stroke-opacity: 1.0" fill="transparent" r="19" cx="26" cy="26" stroke-dasharray="70 30" stroke-dashoffset="0" />
+        
+        <!-- armor icon -->
+        <image href="img/shield.svg" height="18" width="18" x="16.8" y="18">
+        </image>
+      </svg>
+
+      <!-- hunger icon -->
+      <svg class="circle hhunger" width="53" height="53">
+        <circle class="fundo fome" stroke="#fff" stroke-width="0" style="fill-opacity: 0.4" fill="white" r="22" cx="26" cy="26" stroke-dasharray="0 0" stroke-dashoffset="0" />
+        <circle class="new" stroke="#fff" stroke-width="0" style="stroke-opacity: 0.6" fill="#202020" r="16" cx="26" cy="27" stroke-dasharray="0 0" stroke-dashoffset="0" />
+        <circle class="progressplayer hunger" stroke="#F57F17" stroke-width="6.0" style="stroke-opacity: 1.0" fill="transparent" r="19" cx="26" cy="26" stroke-dasharray="70 30" stroke-dashoffset="0" />
+        
+        <!-- hunger icon -->
+        <image href="img/burger.svg" height="17" width="17" x="17.5" y="18">
+        </image>
+      </svg>
+
+      <!-- thirst radial -->
+      <svg class="circle hthirst" width="53" height="53">
+        <circle class="fundo cede" stroke="#fff" stroke-width="0" style="fill-opacity: 0.4" fill="white" r="22" cx="26" cy="26" stroke-dasharray="0 0" stroke-dashoffset="0" />
+        <circle class="new" stroke="#fff" stroke-width="0" style="stroke-opacity: 0.6" fill="#202020" r="16" cx="26" cy="27" stroke-dasharray="0 0" stroke-dashoffset="0" />
+        <circle class="progressplayer thirst" stroke="#00B0FF" stroke-width="6.0" style="stroke-opacity: 1.0" fill="transparent" r="19" cx="26" cy="26" stroke-dasharray="70 30" stroke-dashoffset="0" />
+        
+        <!-- thirst icon -->
+        <image href="img/water.svg" height="18" width="18" x="17" y="17.5">
+        </image>
+      </svg>
+
+      <!-- oxygen radial -->
+      <svg class="circle ooxygen" width="53" height="53">
+        <circle class="fundo aome" stroke="#fff" stroke-width="0" style="fill-opacity: 0.4" fill="#9dbad5" r="22" cx="26" cy="26" stroke-dasharray="0 0" stroke-dashoffset="0" />
+        <circle class="new" stroke="#fff" stroke-width="0" style="stroke-opacity: 0.6" fill="#202020" r="16" cx="26" cy="27" stroke-dasharray="0 0" stroke-dashoffset="0" />
+        <circle class="progressplayer oxygen" stroke="#9dbad5" stroke-width="6.0" style="stroke-opacity: 1.0" fill="transparent" r="19" cx="26" cy="26" stroke-dasharray="70 30" stroke-dashoffset="0" />
+        
+        <!-- oxygen icon -->
+        <image href="img/oxygen.svg" height="22" width="22" x="15" y="14">
+        </image>
+      </svg>
+
+      <!-- stress radial -->
+      <svg class="circle hstress" width="53" height="53">
+        <circle class="progressplayer stress" stroke="#E53935" stroke-width="6.0" style="stroke-opacity: 1.0" fill="transparent" r="19" cx="26" cy="26" stroke-dasharray="70 30" stroke-dashoffset="0" />
+        <circle class="fundo stress" stroke="#fff" stroke-width="0" style="fill-opacity: 0.4" fill="red" r="22" cx="26" cy="26" stroke-dasharray="0 0" stroke-dashoffset="0" />
+        <circle class="new" stroke="#fff" stroke-width="0" style="stroke-opacity: 0.6" fill="#202020" r="16" cx="26" cy="27" stroke-dasharray="0 0" stroke-dashoffset="0" />
+        
+        <!-- stress icon -->
+        <image href="img/brain.svg" height="17" width="17" x="18" y="18">
+        </image>
+      </svg>
+      
+      <!-- car ui -->
+
+      <!-- seatbelt radial -->
+      <svg class="circle-harness" width="53" height="53">
+        <circle class="fundo seat" stroke="#fff" stroke-width="0" style="fill-opacity: 1" fill="#d989ff" r="22" cx="26" cy="26" stroke-dasharray="0 0" stroke-dashoffset="0" />
+        <circle class="new" stroke="#fff" stroke-width="0" style="stroke-opacity: 0.6" fill="#202020" r="16" cx="26" cy="27" stroke-dasharray="0 0" stroke-dashoffset="0" />
+        
+        <!-- seatbelt icon -->
+        <image href="img/seatbelt.svg" height="17" width="22" x="15.4" y="18">
+        </image>
+      </svg>
+
+      <!-- engine radial -->
+      <svg class="circle-engine" width="53" height="53">
+        <circle class="circle hengine" stroke="transparent" stroke-width="0" style="fill-opacity: 0.4" fill="#fff" r="22" cx="26" cy="26" stroke-dasharray="0 0" stroke-dashoffset="0" />
+        <circle class="new" stroke="#fff" stroke-width="0" style="stroke-opacity: 0" fill="#202020" r="16" cx="26" cy="27" stroke-dasharray="0 0" stroke-dashoffset="0" />
+        <circle class="progressplayer engine" stroke="#f0932b" stroke-width="6.0" style="stroke-opacity: 1.0" fill="transparent" r="19" cx="26.7" cy="26" stroke-dasharray="70 30" stroke-dashoffset="0" />
+        
+        <!-- engine icon -->
+        <image href="img/engine.svg" height="22" width="22" x="15.1" y="15">
+        </image>
+      </svg>
+
+      <!-- nitro radial -->
+      <svg class="circle hnitrous" width="53" height="53">
+        <circle class="fundo nitro" stroke="transparent" stroke-width="0" style="fill-opacity: 0.4" fill="#F06292" r="22" cx="26" cy="26" stroke-dasharray="0 0" stroke-dashoffset="0" />
+        <circle class="new" stroke="#fff" stroke-width="0" style="stroke-opacity: 0" fill="#202020" r="16" cx="26" cy="27" stroke-dasharray="0 0" stroke-dashoffset="0" />
+        <circle class="progressplayer nitrous" stroke="#F06292" stroke-width="6.0" style="stroke-opacity: 1.0" fill="transparent" r="19" cx="26" cy="26" stroke-dasharray="70 30" stroke-dashoffset="0" />
+        
+        <!-- nitro icon -->
+        <image href="img/nitro.svg" class= "nitronot" height="17" width="17" x="17" y="19"></image>
+        <image href="img/nitroactive.svg" class= "nitroactive" height="17" width="17" x="17" y="19"></image>
+      </svg>
+
+      <!-- dev radial -->
+      <svg class="circle-dev" width="53" height="53">
+        <circle class="fundo dev" stroke="#fff" stroke-width="0" style="fill-opacity: 1" fill="black" r="22" cx="26" cy="26" stroke-dasharray="0 0" stroke-dashoffset="0" />
+        <circle class="new" stroke="#fff" stroke-width="0" style="stroke-opacity: 0.6" fill="#202020" r="16" cx="26" cy="27" stroke-dasharray="0 0" stroke-dashoffset="0" />
+      
+        <!-- dev icon -->
+        <image href="img/dev.svg" height="17" width="22" x="15.4" y="18">
+        </image>
+      </svg>
+    </div>
+
+    <div class="ui-car-container">
+      <div class="ui-car-otherinfo">
+        <div class="counter">
+          <div class="counter2">
+
+            <!-- speedometer -->
+            <div class="speedometer">
+              <svg class="circle" width="50" height="50">
+                <circle class="backgroundCircle2" stroke="#FFF" stroke-width="3.9" style="stroke-opacity: 0.6" fill="transparent" r="18" cx="25" cy="25" stroke-dasharray="55 45" stroke-dashoffset="0" />
+                <circle class="progress progress-speed" stroke="#FFF" stroke-width="3.9" style="stroke-opacity: 1" fill="transparent" r="18" cx="25" cy="25" stroke-dasharray="70 30" stroke-dashoffset="0" />
+              </svg>
+              <div class="text">
+                <span class="speed">
+                </span>
+                <div class="mph">MPH</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="addon">
+
+          <!-- fuel -->
+          <div class="fuel">
+            <svg class="circle" width="40" height="40">
+              <circle class="backgroundCircle2" stroke="#FFF" stroke-width="3.5" style="stroke-opacity: 0.6" fill="transparent" r="18" cx="20" cy="20" stroke-dasharray="70 30" stroke-dashoffset="0" />
+              <circle class="progress progress-fuel" stroke="#FFF" stroke-width="3.7" style="stroke-opacity: 1" fill="transparent" r="18" cx="20" cy="20" stroke-dasharray="70 30" stroke-dashoffset="0" />
+              <image href="img/fuel.svg" height="16" width="16" x="13" y="10">
+              </image>
+            </svg>
+          </div>
+
+          <!-- engine and seatbelt -->
+          <div class="engine-red">
+            <img src="img/engine-red.svg" />
+          </div>
+          <div class="engine-orange">
+            <img src="img/engine-orange.svg" />
+          </div>
+          <div class="car-seatbelt-info">
+            <img src="img/belt.svg" />
+          </div>
+
+         <!-- map borders -->
+          <div class="outline">
+            <div class="circlemapborder">
+            </div>
+         </div>
+         <div class="outline">
+            <div class="squaremapborder">
+            </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
