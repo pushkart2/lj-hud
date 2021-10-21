@@ -2,6 +2,7 @@ local speed = 0.0
 local stress = 0
 local StressGain = 0
 local IsGaining = false
+PlayerJob = {}
 
 -- stress
 Citizen.CreateThread(function()
