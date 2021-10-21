@@ -6,13 +6,12 @@ local IsGaining = false
 -- stress
 Citizen.CreateThread(function()
     while true do
-        Wait(500)
         local ped = PlayerPedId()
-        if IsPedShooting(ped) then
-            local StressChance = math.random(1, 40)
-            local odd = math.random(1, 40)
+        if IsPedShooting(PlayerPedId()) then
+            local StressChance = math.random(1, 3)
+            local odd = math.random(1, 3)
             if StressChance == odd then
-                local PlusStress = math.random(1, 5) / 100
+                local PlusStress = math.random(2, 4) / 100
                 StressGain = StressGain + PlusStress
             end
             if not IsGaining then
@@ -23,6 +22,29 @@ Citizen.CreateThread(function()
                 IsGaining = false
             end
         end
+
+        if (PlayerJob.name ~= "police") then
+            if IsPlayerFreeAiming(PlayerId()) and not IsPedShooting(PlayerPedId()) then
+                local CurrentWeapon = GetSelectedPedWeapon(ped)
+                local WeaponData = QBCore.Shared.Weapons[CurrentWeapon]
+                if WeaponData.name:upper() ~= "WEAPON_UNARMED" then
+                    local StressChance = math.random(1, 20)
+                    local odd = math.random(1, 20)
+                    if StressChance == odd then
+                        local PlusStress = math.random(1, 3) / 100
+                        StressGain = StressGain + PlusStress
+                    end
+                end
+                if not IsGaining then
+                    IsGaining = true
+                end
+            else
+                if IsGaining then
+                    IsGaining = false
+                end
+            end
+        end
+            Citizen.Wait(2)
     end
 end)
 
