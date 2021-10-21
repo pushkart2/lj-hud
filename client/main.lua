@@ -14,7 +14,7 @@ if Config.Version == "new" then
     QBCore = exports['qb-core']:GetCoreObject()
     print('[lj-hud] NEWER OB-CORE VERSION LOADED')
 elseif Config.Version == "old" then
-    QBCore = nil
+    local QBCore = nil
     Citizen.CreateThread(function()
         while QBCore == nil do
             TriggerEvent("QBCore:GetObject", function(obj)QBCore = obj end)
