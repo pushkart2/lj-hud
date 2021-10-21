@@ -76,7 +76,10 @@ Citizen.CreateThread(function()
                 end
 
                 -- talking and proximity status
-                local level = LocalPlayer.state["proximity"].distance
+		local level = 0
+                if LocalPlayer.state["proximity"] ~= nil then
+                    level = LocalPlayer.state["proximity"].distance
+                end
                 if level == 1 then 
                     talking = 33
                 elseif level == 2.3 then 
