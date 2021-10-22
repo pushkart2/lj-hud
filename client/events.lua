@@ -48,12 +48,21 @@ AddEventHandler("seatbelt:client:ToggleSeatbelt", function(toggle)
     end
 end)
 
-RegisterNetEvent('hud:client:ToggleHarness')
-AddEventHandler('hud:client:ToggleHarness', function(toggle)
-    SendNUIMessage({
-        action = "harness",
-        toggle = toggle
-    })
+RegisterNetEvent("seatbelt:client:ToggleHarness")
+AddEventHandler("seatbelt:client:ToggleHarness", function(toggle)
+    if toggle == nil then
+        harnessOn = not harnessOn
+        SendNUIMessage({
+            action = "harness",
+            harness = harnessOn,
+        })
+    else
+        seatbeltOn = toggle
+        SendNUIMessage({
+            action = "harness",
+            harness = toggle,
+        })
+    end
 end)
 
 RegisterNetEvent('hud:client:UpdateNitrous')
