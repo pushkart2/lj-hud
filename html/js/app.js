@@ -272,6 +272,7 @@ var color = null;
             $(".hnitrous").fadeOut(750);
             }
             $('.circle-engine').hide();
+            $('.circle-harness').hide();
         }
     };
 
