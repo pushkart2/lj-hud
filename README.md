@@ -107,8 +107,47 @@ menu_buttondev:On('change', function(item, newValue, oldValue)
 end)
 ```
 
-# Find qb-smallresources / client / seatbelt.lua find this part and replace with this snippet
+# Find qb-smallresources / client / seatbelt.lua find this comment "-- Events" and replace with this snippet up to comment "-- Export"
 ```
+-- Events
+
+RegisterNetEvent('seatbelt:client:UseHarness') -- On Item Use (registered server side)
+AddEventHandler('seatbelt:client:UseHarness', function(ItemData)
+    local ped = PlayerPedId()
+    local inveh = IsPedInAnyVehicle(ped, false)
+    local class = GetVehicleClass(GetVehiclePedIsUsing(ped))
+    if inveh and class ~= 8 and class ~= 13 and class ~= 14 then
+        if not harnessOn then
+            LocalPlayer.state:set("inv_busy", true, true)
+            QBCore.Functions.Progressbar("harness_equip", "Attaching Race Harness", 5000, false, true, {
+                disableMovement = false,
+                disableCarMovement = false,
+                disableMouse = false,
+                disableCombat = true,
+            }, {}, {}, {}, function()
+                LocalPlayer.state:set("inv_busy", false, true)
+                ToggleHarness()
+                TriggerServerEvent('equip:harness', ItemData)
+            end)
+            harnessHp = ItemData.info.uses
+            harnessData = ItemData
+        else
+            LocalPlayer.state:set("inv_busy", true, true)
+            QBCore.Functions.Progressbar("harness_equip", "Removing Race Harness", 5000, false, true, {
+                disableMovement = false,
+                disableCarMovement = false,
+                disableMouse = false,
+                disableCombat = true,
+            }, {}, {}, {}, function()
+                LocalPlayer.state:set("inv_busy", false, true)
+                ToggleHarness()
+            end)
+        end
+    else
+        QBCore.Functions.Notify('You\'re not in a car.', 'error')
+    end
+end)
+
 -- Functions
 
 function ToggleSeatbelt()
@@ -122,18 +161,29 @@ function ToggleSeatbelt()
         TriggerEvent("seatbelt:client:ToggleSeatbelt")
         TriggerServerEvent("InteractSound_SV:PlayOnSource", "carbuckle", 0.25)
         TriggerEvent('QBCore:Notify', "Seat belt buckled!")
+        
     end
 end
 
 function ToggleHarness()
     if harnessOn then
         harnessOn = false
-        ToggleSeatbelt()
+        TriggerEvent("seatbelt:client:ToggleHarness")
+        TriggerEvent('QBCore:Notify', "Race harness off!", "error")
     else
         harnessOn = true
-        ToggleSeatbelt()
+        TriggerEvent("seatbelt:client:ToggleHarness")
+        TriggerEvent('QBCore:Notify', "Race harness on!")
     end
 end
+
+function ResetHandBrake()
+    if handbrake > 0 then
+        handbrake = handbrake - 1
+    end
+end
+
+-- Export
 ```
 
 # Installation
