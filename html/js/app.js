@@ -279,9 +279,16 @@ var color = null;
     ToggleSeatbelt = function(data) {
         if (data.seatbelt) {
             $(".car-seatbelt-info img").fadeOut(750);
-            $(".circle-harness").fadeIn(750);
         } else {
             $(".car-seatbelt-info img").fadeIn(750);
+        }
+    };
+
+    // harness
+    ToggleHarness = function(data) {
+        if (data.harness) {
+            $(".circle-harness").fadeIn(750);
+        } else {
             $(".circle-harness").fadeOut(750);
         }
     };
