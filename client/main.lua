@@ -6,6 +6,7 @@ local level = 100
 local stress = 0
 local oxygen = 100
 local seatbeltOn = false
+local harnessOn = false
 local bleedingPercentage = 0
 local level = 0
 
@@ -76,10 +77,12 @@ Citizen.CreateThread(function()
                 end
 
                 -- talking and proximity status
-		local level = 0
+                local level = 0
                 if LocalPlayer.state["proximity"] ~= nil then
                     level = LocalPlayer.state["proximity"].distance
                 end
+
+                local level = LocalPlayer.state["proximity"].distance
                 if level == 1 then 
                     talking = 33
                 elseif level == 2.3 then 
@@ -123,6 +126,7 @@ Citizen.CreateThread(function()
                     stress = stress,
                     engine = engine,
                     seatbelt = seatbeltOn,
+                    harness = harnessOn,
                     speed = math.ceil(speed),
                     fuel = fuel,
                     on = on,
