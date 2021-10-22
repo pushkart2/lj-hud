@@ -463,6 +463,9 @@ window.onload = function(e) {
             case "seatbelt":
                 ToggleSeatbelt(event.data);
                 break;
+            case "harness":
+                ToggleHarness(event.data);
+                break;
             case "nitrous":
                 UpdateNitrous(event.data);
                 break;
