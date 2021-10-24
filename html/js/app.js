@@ -410,6 +410,16 @@ var color = null;
     } else {
         $('.progress-fuel').css("stroke", "#fff"); // other fuel left color
     }
+        
+    // cinematic mode
+    if (data.cinematicmode) {
+        $(".ui-car-otherinfo").css("left", "-52.5%");
+        $(".ui-bars-container").css("left", "-100%");
+        $(".outline").hide();
+    } else {
+        $(".ui-car-otherinfo").css("left", "22.5%");
+        $(".ui-bars-container").css("left", "1%");
+    }
 };
 
 // compass
