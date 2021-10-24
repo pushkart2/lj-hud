@@ -36,6 +36,11 @@ QBCore.Commands.Add("dev", "Enable/Disable developer Mode", {}, false, function(
     end
 end)
 
+-- /cinematic command
+QBCore.Commands.Add("cinematic", "Enable/Disable cinematic mode", {}, false, function(source, args)
+    TriggerClientEvent("hud:client:ToggleCinematic", source)
+end)
+
 -- stress
 RegisterServerEvent("hud:Server:UpdateStress")
 AddEventHandler('hud:Server:UpdateStress', function(StressGain)
