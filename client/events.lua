@@ -127,3 +127,17 @@ RegisterNetEvent("qb-admin:client:ToggleDevmode")
 AddEventHandler("qb-admin:client:ToggleDevmode", function()
     devmode = not devmode
 end)
+
+RegisterNetEvent("hud:client:ToggleCinematic")
+AddEventHandler("hud:client:ToggleCinematic", function()
+    cinematicmode = not cinematicmode
+    if CinematicModeOn == true then
+        CinematicShow(false)
+        CinematicModeOn = false
+        TriggerEvent('QBCore:Notify', 'Cinematic mode off!', 'error')
+    elseif CinematicModeOn == false then
+        CinematicShow(true)
+        CinematicModeOn = true
+        TriggerEvent('QBCore:Notify', 'Cinematic mode on!')
+    end
+end)
