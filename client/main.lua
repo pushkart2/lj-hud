@@ -133,6 +133,7 @@ Citizen.CreateThread(function()
                     nivel = nivel,
                     activo = activo,
                     devmode = devmode,
+                    cinematicmode = cinematicmode,		
                 })
 
             end
@@ -294,3 +295,53 @@ Citizen.CreateThread(function()
         end
     end)
 end
+
+-- cinematic mode
+CinematicHeight = 0.2 -- height for black bars
+CinematicModeOn = false
+w = 0 
+
+function TopBlackBar()
+    DrawRect(0.0, 0.0, 2.0, w, 0, 0, 0, 255)
+end
+
+function BottomBlackBar()
+    DrawRect(0.0, 1.0, 2.0, w, 0, 0, 0, 255)
+end
+
+function CinematicShow(bool) 
+    SetRadarBigmapEnabled(true, false)
+    Wait(0)
+    SetRadarBigmapEnabled(false, false)
+    if bool then
+        for i = CinematicHeight, 0, -1.0 do
+            Wait(10)
+            w = i
+        end 
+    else
+        for i = 0, CinematicHeight, 1.0 do 
+            Wait(10)
+            w = i
+        end
+    end
+end 
+
+Citizen.CreateThread(function()
+    minimap = RequestScaleformMovie("minimap")
+    if not HasScaleformMovieLoaded(minimap) then
+        RequestScaleformMovie(minimap)
+        while not HasScaleformMovieLoaded(minimap) do 
+            Wait(10)
+        end
+    end
+    
+    while true do
+        Citizen.Wait(10)
+        if w > 0 then
+            TopBlackBar()
+            BottomBlackBar()
+            DisplayRadar(0)
+            SendNUIMessage({ action = "hide", type = street })
+        end
+    end
+end)
