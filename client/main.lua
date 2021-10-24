@@ -299,17 +299,9 @@ end
 -- cinematic mode
 CinematicHeight = 0.2 -- height for black bars
 CinematicModeOn = false
-w = 0 
+w = 0
 
-function TopBlackBar()
-    DrawRect(0.0, 0.0, 2.0, w, 0, 0, 0, 255)
-end
-
-function BottomBlackBar()
-    DrawRect(0.0, 1.0, 2.0, w, 0, 0, 0, 255)
-end
-
-function CinematicShow(bool) 
+function CinematicShow(bool)
     SetRadarBigmapEnabled(true, false)
     Wait(0)
     SetRadarBigmapEnabled(false, false)
@@ -331,17 +323,20 @@ Citizen.CreateThread(function()
     if not HasScaleformMovieLoaded(minimap) then
         RequestScaleformMovie(minimap)
         while not HasScaleformMovieLoaded(minimap) do 
-            Wait(10)
+            Wait(1)
         end
     end
-    
+
     while true do
-        Citizen.Wait(10)
+        Citizen.Wait(1)
         if w > 0 then
-            TopBlackBar()
-            BottomBlackBar()
+            BlackBars()
             DisplayRadar(0)
-            SendNUIMessage({ action = "hide", type = street })
         end
     end
 end)
+
+function BlackBars()
+    DrawRect(0.0, 0.0, 2.0, w, 0, 0, 0, 255)
+    DrawRect(0.0, 1.0, 2.0, w, 0, 0, 0, 255)
+end
