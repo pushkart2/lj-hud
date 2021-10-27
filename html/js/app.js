@@ -1,4 +1,5 @@
 var carui = false;
+var airui = false;
 var color = null;
 // money
 (() => {
@@ -257,7 +258,7 @@ var color = null;
     }
 
 // carui
-
+    // carhud
     CarHud = function(data) {
         if (data.show) {
             carui = true;
@@ -273,6 +274,19 @@ var color = null;
             }
             $('.circle-engine').hide();
             $('.circle-harness').hide();
+        }
+    };
+
+    // aircraft
+    AirCraftHud = function(data) {
+        if (data.show) {
+            airui = true;
+            $(".ui-aircraft-container").fadeIn();
+            $('.car-seatbelt-info').css("margin-right", "90px");
+        } else {
+            airui = false;
+            $(".ui-aircraft-container").hide();
+            $('.car-seatbelt-info').css("margin-right", "0px");
         }
     };
 
@@ -401,6 +415,9 @@ var color = null;
     // speed
     setProgressSpeed(data.speed, ".progress-speed");
 
+    // speed
+    setProgressSpeed(data.altitude, ".progress-altitude");
+
     // fuel
     setProgressFuel(data.fuel, ".progress-fuel");
     if (data.fuel <= 20) {
@@ -413,10 +430,12 @@ var color = null;
         
     // cinematic mode
     if (data.cinematicmode) {
+        $(".ui-aircraft-otherinfo").css("margin-left", "-60%");
         $(".ui-car-otherinfo").css("left", "-52.5%");
         $(".ui-bars-container").css("left", "-100%");
         $(".outline").hide();
     } else {
+        $(".ui-aircraft-otherinfo").css("margin-left", "0%");
         $(".ui-car-otherinfo").css("left", "22.5%");
         $(".ui-bars-container").css("left", "1%");
     }
@@ -468,6 +487,9 @@ window.onload = function(e) {
             case "car":
                 CarHud(event.data);
                 break;
+            case "aircraft":
+                AirCraftHud(event.data);
+                break;
             case "engine":
                 EngineHealth(event.data);
                 break;
@@ -511,15 +533,7 @@ window.onload = function(e) {
 }
 
 // progress
-    function ProgressVoip(percent, element) {
-        var circle = document.querySelector(element);
-        var radius = circle.r.baseVal.value;
-        var circumference = radius * 200 * Math.PI;
-        circle.style.strokeDasharray = `${circumference} ${circumference}`;
-        circle.style.strokeDashoffset = `${circumference}`;
-        const offset = circumference - ((-percent * 100) / 100 / 100) * circumference;
-        circle.style.strokeDashoffset = -offset;
-    }
+   
     function Progress(percent, element) {
         var circle = document.querySelector(element);
         var radius = circle.r.baseVal.value;
@@ -541,6 +555,7 @@ window.onload = function(e) {
         circle.style.strokeDashoffset = -offset;
         html.text(value);
       }
+   
       function setProgressFuel(percent, element) {
         var circle = document.querySelector(element);
         var radius = circle.r.baseVal.value;
