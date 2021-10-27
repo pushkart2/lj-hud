@@ -149,6 +149,7 @@ p {
   transform: scale(1);
 }
 
+/* carui */
 .ui-car-container {
     display: none;
 }
@@ -332,6 +333,14 @@ p {
     -ms-transform-origin: 50% 50%;
     transform-origin: 50% 50%;
   }
+  .backgroundCircle3 {
+    -webkit-transform: rotate(-180deg);
+    -ms-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+  }
   
   .mph {
     position: relative;
@@ -492,4 +501,173 @@ p {
   border: 4px solid #ebebeb;
   position: relative;
   display: inline-block;
+}
+
+/* aircraft */
+.ui-aircraft-container {
+  display: none;
+}
+
+.ui-aircraft-time {
+  display: block !important;
+  position: absolute;
+  font-size: 1.5vh;
+  bottom: 4.5vw;
+  left: 17vw;
+  color: #ffffff;
+  text-shadow: 1px 1px 0px #000000;
+}
+
+.ui-aircraft-meters {
+  display: block !important;
+  position: absolute;
+  font-size: 1.5vh;
+  bottom: 4.5vw;
+  left: 20.5vw;
+  color: #ffffff;
+  text-shadow: 1px 1px 0px #000000;
+}
+
+.aircraft-info {
+  position: relative;
+  float: left;
+}
+
+.aircraft-car-otherinfo {
+  display: none;
+  position: absolute;
+  left: 22.5%;
+  bottom: 4.5%;
+  display: flex;
+}
+
+
+.ui-bars-container {
+  display: flex;
+  position: absolute;
+  bottom: 1%;
+  left: 1%;
+}
+
+ .speed-type {
+  font-size: 14px;
+ }
+ 
+ 
+ .car-speedcounter {
+  position: absolute;
+  top: -1vh;
+  left: 1vh;
+  width: 20vh;
+  font-size: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 0.6px;
+  font-weight: 600;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: small-caps;
+  text-transform: none;
+ }
+
+.alt {
+  position: relative;
+  top: -7px;
+  color: #fff;
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 0.6px;
+  font-weight: 800;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: small-caps;
+  text-transform: none;
+  text-shadow: -1px -1px 0 rgba(0,0,0, 0.7), 1px -1px 0 rgba(0,0,0, 0.7), -1px 1px 0 rgba(0,0,0, 0.7), 1px 1px 0 rgba(0,0,0, 0.7);
+}
+
+.counter3 {
+  height: 100%;
+  width: 100%;
+}
+
+.counter3 .counter4 {
+  position: relative;
+  height: 200%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.counter3 .counter4 div {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 10px;
+}
+.counter3 .counter4 div svg {
+  opacity: 0.2;
+}
+.counter3 .counter4 .active svg {
+  opacity: 0.8;
+}
+
+.counter3 .counter4 .altitude {
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  text-transform: uppercase; 
+}
+.counter3 .counter4 .altitude svg {
+  opacity: 1;
+  position: absolute;
+  left: 49%;
+  top: 962.3%;
+  -webkit-transform: scale(1.8) translate(-25%, -25%);
+  -ms-transform: scale(1.8) translate(-25%, -25%);
+  transform: scale(1.8) translate(-25%, -25%);
+}
+
+.counter3 .counter4 .altitude .text {
+  width: 100%;
+  position: absolute;
+  left: 49.2%;
+  top: 962.3%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin: 0;
+}
+.counter3 .counter4 .altitude .text .speed {
+  margin-top: 9px;
+  color: white;
+  font-size: 22px;
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 0.6px;
+  font-weight: 600;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: small-caps;
+  text-transform: none;
+  text-shadow: -1px -1px 0 rgba(0,0,0, 0.7), 1px -1px 0 rgba(0,0,0, 0.7), -1px 1px 0 rgba(0,0,0, 0.7), 1px 1px 0 rgba(0,0,0, 0.7);
+}
+
+.addonaircraft {
+  display: flex;
+  position: absolute;
+  top: 30%;
+  left: -22%;
+}
+
+.engine-red img {
+  display: flex;
+  position: absolute;
+  top: -26%;
+  right: -2.3vh;
+  width: 2.3vh;
+}
+
+.engine-orange img {
+  display: flex;
+  position: absolute;
+  top: -26%;
+  right: -2.3vh;
+  width: 2.3vh;
 }
