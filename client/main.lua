@@ -82,7 +82,6 @@ Citizen.CreateThread(function()
                     level = LocalPlayer.state["proximity"].distance
                 end
 
-                local level = LocalPlayer.state["proximity"].distance
                 if level == 1 then 
                     talking = 33
                 elseif level == 2.3 then 
@@ -105,6 +104,9 @@ Citizen.CreateThread(function()
 
                 -- speed
                 local speed = GetEntitySpeed(GetVehiclePedIsIn(PlayerPedId(), false)) * SpeedValue
+
+                -- altitude
+                local altitude = GetEntityCoords(PlayerPedId()).z * 0.5              
             
                 -- fuel
                 local fuel = exports['LegacyFuel']:GetFuel(GetVehiclePedIsIn(PlayerPedId(), false))
@@ -128,6 +130,7 @@ Citizen.CreateThread(function()
                     seatbelt = seatbeltOn,
                     harness = harnessOn,
                     speed = math.ceil(speed),
+                    altitude = math.ceil(altitude),
                     fuel = fuel,
                     on = on,
                     nivel = nivel,
@@ -140,13 +143,21 @@ Citizen.CreateThread(function()
         end
     end)
 
-
-
--- car ui
+-- carui
 Citizen.CreateThread(function() 
     while true do
         Wait(500)
         if isLoggedIn and QBCore ~= nil then
+            -- aircraft check
+            if IsPedInAnyHeli(PlayerPedId()) or IsPedInAnyPlane(PlayerPedId()) then
+                DisplayRadar(true)
+                SendNUIMessage({ action = "aircraft", show = true, })
+            else
+                DisplayRadar(false)
+                SendNUIMessage({ action = "aircraft", show = false, })
+            end
+            
+            -- car check
             if IsPedInAnyVehicle(PlayerPedId(), false) and isLoggedIn then
                 DisplayRadar(true)
                 SendNUIMessage({ action = "car", show = true, })
@@ -159,7 +170,6 @@ Citizen.CreateThread(function()
                 cruiseOn = false
                 nivel = 0
                 engine = 0
-
             end
         end
     end
