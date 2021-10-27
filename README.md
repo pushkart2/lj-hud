@@ -20,7 +20,7 @@ Remade and improved off an earlier existing qb-hud and given permission from the
 
 # Dependencies
 * [qbcore framework](https://github.com/qbcore-framework)
-* [pma-voice v5.1.0](https://github.com/AvarianKnight/pma-voice/releases/tag/v5.1.0)
+* [pma-voice](https://github.com/AvarianKnight/pma-voice)
 * [qb-radio](https://github.com/qbcore-framework/qb-radio)
 * [LegacyFuel](https://github.com/qbcore-framework/qb-radio)
 
