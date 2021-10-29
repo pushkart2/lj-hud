@@ -8,6 +8,8 @@ https://discord.gg/HH6uTcBfew
 Remade and improved off an earlier existing qb-hud and given permission from the original developer. Runs at ~ 0.01 to 0.02 ms if you have more optimization suggestions feel free to reach out
 
 ## MAKE SURE YOU REMEMBER:
+**If you're using lj-fuel [lj-fuel](https://github.com/loljoshie/lj-fuel) you need to change LegacyFuel exports to lj-fuel**
+
 1. FULLY RESTART YOUR FIVEM CLIENT IF YOUR SERVER CRASHES OR YOU'VE LEFT THE GAME. PMA-VOICE WILL NOT GRAB YOUR PROXIMITY CORRECTLY AND WILL BREAK MY HUD IF NOT!
 2. HAVE PMA-VOICE (ONESYNC ENABLED)
 3. HAVE lj-hud ENSURED LOWER THAN ANY OF THE DEPENDENCIES LISTED ABOVE
