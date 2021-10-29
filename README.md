@@ -5,7 +5,9 @@ Join my Discord laboratory for updates, support, and special early testing!
 <br>
 https://discord.gg/HH6uTcBfew
 
-Remade and improved off an earlier existing qb-hud and given permission from the original developer. Runs at ~ 0.01 to 0.02 ms if you have more optimization suggestions feel free to reach out
+Remade and improved off an earlier existing qb-hud and given permission from the original developer. 
+<br>
+Runs at ~ 0.04 to 0.09 ms if you have more optimization suggestions feel free to reach out
 
 ## MAKE SURE YOU REMEMBER:
 **If you're using lj-fuel [lj-fuel](https://github.com/loljoshie/lj-fuel) you need to change LegacyFuel exports to lj-fuel**
@@ -46,8 +48,8 @@ Remade and improved off an earlier existing qb-hud and given permission from the
 #
 
 # Previews
-### ms
-![ms](https://user-images.githubusercontent.com/91661118/138173313-ee99c35c-3a6a-4a7d-a708-4c2bb82ca59f.png)
+### resource ms
+![resource ms](https://user-images.githubusercontent.com/91661118/139408797-70c8f1a4-b0c9-4a27-ac59-f7b7305e7d0b.png)
 ### configurations found in lj-hud/config.lua and lj-hud/html/js/config.js
 ![configs](https://user-images.githubusercontent.com/91661118/138173317-9325ae10-4256-4e3a-9c1e-19aa508d7013.png)
 ### circle or square map
