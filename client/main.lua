@@ -109,10 +109,7 @@ Citizen.CreateThread(function()
                 local altitude = GetEntityCoords(PlayerPedId()).z * 0.5              
             
                 -- fuel
-		local fuel = exports['LegacyFuel']:GetFuel(GetVehiclePedIsIn(PlayerPedId(), false))
-				
-		-- uncomment and remove export above if using lj-fuel		
-		-- local fuel = exports['lj-fuel']:GetFuel(GetVehiclePedIsIn(PlayerPedId(), false))
+		        local fuel = exports['LegacyFuel']:GetFuel(GetVehiclePedIsIn(PlayerPedId(), false))
 
                 -- engine
                 local engine = (GetVehicleEngineHealth(GetVehiclePedIsIn(PlayerPedId()))/10)
