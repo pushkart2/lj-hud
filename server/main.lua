@@ -15,7 +15,6 @@ elseif Config.Version == "old" then
     end)
 end
 
-
 -- /cash command
 QBCore.Commands.Add("cash", "Check cash", {}, false, function(source, args)
 	TriggerClientEvent('hud:client:ShowMoney', source, "cash")
@@ -39,6 +38,16 @@ end)
 -- /cinematic command
 QBCore.Commands.Add("cinematic", "Enable/Disable cinematic mode", {}, false, function(source, args)
     TriggerClientEvent("hud:client:ToggleCinematic", source)
+end)
+
+-- /circle command
+QBCore.Commands.Add("circle", "Enable/Disable circle shaped map", {}, false, function(source, args)
+    TriggerClientEvent("hud:client:ChangeCircle", source)
+end)
+
+-- /square command
+QBCore.Commands.Add("square", "Enable/Disable square shaped map", {}, false, function(source, args)
+    TriggerClientEvent("hud:client:ChangeSquare", source)
 end)
 
 -- stress
@@ -129,10 +138,10 @@ end)
 function comma_value(amount)
     local formatted = amount
     while true do  
-      formatted, k = string.gsub(formatted, "^(-?%d+)(%d%d%d)", '%1,%2')
-      if (k==0) then
+        formatted, k = string.gsub(formatted, "^(-?%d+)(%d%d%d)", '%1,%2')
+    if (k==0) then
         break
-      end
     end
+end
     return formatted
-  end
+end
