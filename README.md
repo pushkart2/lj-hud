@@ -3,7 +3,7 @@
 # lj-hud used with QBCore Framework
 Join my Discord laboratory for updates, support, and special early testing!
 <br>
-https://discord.gg/HH6uTcBfew
+https://discord.gg/loljoshie
 
 Remade and improved off an earlier existing qb-hud and given permission from the original developer. 
 <br>
@@ -29,6 +29,7 @@ Runs at ~ 0.04 to 0.09 ms if you have more optimization suggestions feel free to
 * [LegacyFuel](https://github.com/qbcore-framework/qb-radio)
 
 # Key Features
+* Switch between square and circle map with in-game /circle or square
 * Cinematic Mode (fully hides hud)
 * Nitro when actived icon turns light red
 * When dead heath radial turns red
@@ -52,6 +53,9 @@ Runs at ~ 0.04 to 0.09 ms if you have more optimization suggestions feel free to
 ![resource ms](https://user-images.githubusercontent.com/91661118/139408797-70c8f1a4-b0c9-4a27-ac59-f7b7305e7d0b.png)
 ### configurations found in lj-hud/config.lua and lj-hud/html/js/config.js
 ![configs](https://user-images.githubusercontent.com/91661118/138173317-9325ae10-4256-4e3a-9c1e-19aa508d7013.png)
+### circle or square map in-game
+https://user-images.githubusercontent.com/91661118/139569523-8a26ca87-01c3-4c3c-b6ef-5874c1b4b124.mp4
+#
 ### circle or square map
 ![map](https://user-images.githubusercontent.com/91661118/138173410-1f1a274e-dc68-4303-b2da-6e4caaf40352.png)
 #
@@ -213,6 +217,14 @@ ensure lj-hud
 ```
 
 # Change Logs
+
+### 3.1
+* Added in-game command to switch between circle or square map
+* Fix outline border not syncing with change of map
+* Added highlight background for microphone and radio when active
+* Replace water icon
+* Changed some colors
+* More optimization
 
 ### 3.0
 * Added "Dynamic" show status feature
