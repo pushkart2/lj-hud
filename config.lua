@@ -1,7 +1,6 @@
 Config = {}
 
 Config.Version = "new" -- "new" or "old" set to old if using older versions of qbcore
-Config.ShowMap = "circle" -- "circle" or "square" set square if you want that shape instead
 Config.ShowStamina = false -- set to false if you don't want stamina
 Config.ShowOxygen = true -- set to false if you don't want oxygen
 Config.SpeedValue = "mph"  -- "kmh" or "mph"
