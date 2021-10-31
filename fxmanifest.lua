@@ -2,7 +2,7 @@ fx_version 'cerulean'
 games { 'gta5' }
 
 description 'lj-hud'
-version '3.0'
+version '3.1'
 author 'github.com/loljoshie'
 
 client_scripts {
