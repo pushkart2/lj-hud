@@ -44,7 +44,6 @@ Runs at ~ 0.04 to 0.09 ms if you have more optimization suggestions feel free to
 * Fuel low alert
 * Fuel gauge color changes
 * Harness equipped icon indicator
-* Minimap square and circle (found in .config)
 * Minimap white borders
 #
 
