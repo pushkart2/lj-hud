@@ -59,9 +59,11 @@ var color = null;
     // voice 
     Progress(data.talking, ".mic");
     if (data.speaking == 1) {
-    $(".mic").css({"stroke":"yellow"}); // mic highlight
+    $(".mic").css({"stroke":"#FFEB3B"}); // mic highlight
+    $(".mr").css({"fill":"#FFEB3B"}); // mic highlight background
     } else {
     $('.mic').css({"stroke":"#fff"});
+    $(".mr").css({"fill":"#fff"});
     }
 
     // voice switch
@@ -74,6 +76,7 @@ var color = null;
     Progress(data.talking, ".mic"); 
     if (data.radio && data.speaking == 1) {
     $(".mic").css({"stroke":"#ff5454"}); // radio highlight
+    $(".mr").css({"fill":"#ff5454"}); // radio highlight background
     }
 
     // radio switch
@@ -511,13 +514,15 @@ window.onload = function(e) {
             case "displaySquareUI":
                 $(".circlemapborder").hide();
                 $(".outline").show();
-                $(".squaremapborder").fadeIn(300);
+                $(".squaremapborder").show();
             break;
             case "hideSquareUI":
                 $(".circlemapborder").hide();
-
+                $(".outline").show();
                 $(".squaremapborder").hide();
             break;
+
+
             case "displayCircleUI":
                 $(".squaremapborder").hide();
                 $(".outline").show();
@@ -525,7 +530,7 @@ window.onload = function(e) {
             break;
             case "hideCircleUI":
                 $(".squaremapborder").hide();
-
+                $(".outline").show();
                 $(".circlemapborder").hide();
             break;
         }
