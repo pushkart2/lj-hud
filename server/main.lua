@@ -74,8 +74,8 @@ AddEventHandler('hud:Server:UpdateStress', function(StressGain)
 	end
 end)
 
-RegisterServerEvent('hud:server:gain:stress')
-AddEventHandler('hud:server:gain:stress', function(amount)
+RegisterServerEvent('hud:server:GainStress')
+AddEventHandler('hud:server:GainStress', function(amount)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     local newStress
