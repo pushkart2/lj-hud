@@ -126,7 +126,7 @@ Citizen.CreateThread(function()
             if IsPedInAnyVehicle(PlayerPedId(), false) then
                 speed = GetEntitySpeed(GetVehiclePedIsIn(PlayerPedId(), false)) * SpeedValue
                 if speed >= Config.MinimumSpeed then
-                    TriggerServerEvent('hud:server:gain:stress', math.random(1, 2))
+                    TriggerServerEvent('hud:server:GainStress', math.random(1, 2))
                 end
             end
         end
