@@ -24,7 +24,7 @@ Runs at ~ 0.04 to 0.09 ms if you have more optimization suggestions feel free to
 
 # Dependencies
 * [qbcore framework](https://github.com/qbcore-framework)
-* [pma-voice](https://github.com/AvarianKnight/pma-voice)
+* [pma-voice](https://github.com/AvarianKnight/pma-voice) (recommended version 5.1.0 or 5.2.0) 6.0+ requires you to use server build 4837+ 
 * [qb-radio](https://github.com/qbcore-framework/qb-radio)
 * [LegacyFuel](https://github.com/qbcore-framework/qb-radio)
 
